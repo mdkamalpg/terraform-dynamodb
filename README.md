@@ -4,14 +4,15 @@
 - change the var values in dynamodn.tfvars file accoridngly 
 - copy the  "Command line or programmatic access" for the project you want to deploy the table and paste on your terminal  
 - then execute the following code 
+- env var is set to get from console. Vod wise noimpact even though if you pass wrong env, just using it as tag while. deploying
 ```
 terraform init
-terraform plan 
+terraform plan -var-file=dynamodb.tfvars
 ```
 
 - if no error is shown, deploy the changes
 ```
-terraform apply --auto-approve
+terraform apply -var-file=dynamodb.tfvars --auto-approve
 ```
 It will deploy the chnages in the respective environemtn.
 
